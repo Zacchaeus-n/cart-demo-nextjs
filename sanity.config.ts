@@ -1,18 +1,23 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import { defineConfig } from "sanity";
+import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
+import { schemaTypes } from "./schemas";
+
+// ENVS
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
-  name: 'default',
-  title: 'cart-demo',
+  basePath: "/studio",
+  name: "Cart_Content_Studio",
+  title: "Cart Content Studio",
 
-  projectId: 'vuz8yn9v',
-  dataset: 'production',
+  projectId,
+  dataset,
 
   plugins: [deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
   },
-})
+});
