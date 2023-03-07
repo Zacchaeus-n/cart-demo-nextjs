@@ -1,5 +1,5 @@
-import Head from "./Head"
 import "../styles/globals.css"
+import Head from "./head"
 
 export const metadata = {
   title: 'Next.js',
