@@ -5,7 +5,7 @@ const Head = () => {
     <>
     <title>Cart Demo Project</title>
     <meta content='width=device-width,intial-scale-1' name='viewport' />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     </>
   )
 }

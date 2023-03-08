@@ -2,6 +2,9 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schemas";
+import { myTheme } from "./theme";
+import Logo from "./components/Logo";
+import StudioNavbar from "./components/StudioNavbar";
 
 // ENVS
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
@@ -20,4 +23,13 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+
+  studio: {
+    components: {
+      logo: Logo,
+      navbar: StudioNavbar
+    }
+  },
+
+  theme: myTheme
 });
