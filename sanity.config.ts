@@ -5,6 +5,7 @@ import { schemaTypes } from "./schemas";
 import { myTheme } from "./theme";
 import StudioLogo from "./components/StudioLogo";
 import StudioNavbar from "./components/StudioNavbar";
+import { defaultDocumentNode } from "./lib/structure";
 
 // ENVS
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
@@ -18,7 +19,9 @@ export default defineConfig({
   projectId,
   dataset,
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool({
+    defaultDocumentNode: defaultDocumentNode
+  }), visionTool()],
 
   schema: {
     types: schemaTypes,

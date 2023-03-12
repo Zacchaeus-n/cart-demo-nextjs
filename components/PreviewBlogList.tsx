@@ -11,6 +11,7 @@ interface Props {
 
 const PreviewBlogList: FC<Props> = ({query}) => {
     const posts = usePreview(null, query)
+    console.log("posts preview: ", posts)
   return (
     <BlogList posts={posts} />
   )
