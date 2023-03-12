@@ -3,7 +3,7 @@ import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schemas";
 import { myTheme } from "./theme";
-import Logo from "./components/Logo";
+import StudioLogo from "./components/StudioLogo";
 import StudioNavbar from "./components/StudioNavbar";
 
 // ENVS
@@ -26,7 +26,7 @@ export default defineConfig({
 
   studio: {
     components: {
-      logo: Logo,
+      logo: StudioLogo,
       navbar: StudioNavbar
     }
   },

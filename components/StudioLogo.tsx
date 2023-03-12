@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import logo from "/public/logo.png"
 
-const Logo = (props: any) => {
+const StudioLogo = (props: any) => {
     const {renderDefault, title}=props
   return (
     <div><div className="flex items-center justify-between p-5">
@@ -12,4 +12,4 @@ const Logo = (props: any) => {
   )
 }
 
-export default Logo
+export default StudioLogo

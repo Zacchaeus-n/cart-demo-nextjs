@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import { previewData } from "next/headers";
 
 const HomePage = () => {
-  return (
-    <div className=''>
-        <h1 className='text-xl'>Welcome to our blog</h1>
-    </div>
-  )
-}
+  // checking if in preview mode
+  let _previewData: any = previewData()
+  if (Object.keys(_previewData).length > 0) {
+    console.log("_previewData: ", _previewData)
+    return <div className="">Preview Mode</div>;
+  }
 
-export default HomePage
+  return <div className="">Published Mode</div>;
+};
+
+export default HomePage;
