@@ -3,17 +3,19 @@
 import Image from "next/image";
 import React, { FC } from "react";
 import urlFor from "../lib/urlFor";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
 interface Props {
   posts: Post[];
 }
 
 const BlogList: FC<Props> = ({ posts }) => {
+  console.log("posts: ", posts);
   return (
     <div>
       <hr className="border-[tomato] mb-10" />
 
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-10 gap-y-16 pb-20">
         {/* posts */}
         {posts?.map((post) => (
           <div key={post._id} className="flex flex-col group cursor-pointer">
@@ -49,8 +51,14 @@ const BlogList: FC<Props> = ({ posts }) => {
             </div>
             <div className="mt-5 flex-1">
               <p className="underline text-lg font-bold">{post?.title}</p>
-              <p className="text-gray-500">{post?.description}</p>
+              <p className="line-clamp-2 text-gray-500">
+                {post?.body?.[0].children?.[0].text}
+              </p>
             </div>
+            <p className="mt-5 font-bold flex items-center group-hover:underline">
+              Read More
+              <ArrowUpRightIcon className="ml-2 h-4 w-4"/>
+            </p>
           </div>
         ))}
       </div>
