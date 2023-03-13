@@ -27,6 +27,7 @@ export async function generateStaticParams() {
 }
 
 async function PostPage({ params: { slug } }: Props) {
+
   const query = groq`
   *[_type=="post" && slug.current == $slug][0] {
     ...,
@@ -90,7 +91,7 @@ async function PostPage({ params: { slug } }: Props) {
           </section>
         </div>
       </section>
-      {/* <PortableText value={post?.body} components={RichTextComponents} /> */}
+      <PortableText value={post?.body} components={RichTextComponents} />
     </article>
   );
 }
