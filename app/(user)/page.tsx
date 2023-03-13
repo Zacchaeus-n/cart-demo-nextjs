@@ -14,6 +14,8 @@ const query = groq`
     body
   } | order(_createdAt desc)
 `
+// revalidation
+export const revalidate = 60
 
 const HomePage = async () => {
   // checking if in preview mode
